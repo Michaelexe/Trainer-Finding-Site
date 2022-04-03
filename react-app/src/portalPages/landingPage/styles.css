@@ -4,10 +4,6 @@
     aspect-ratio: 21/11;
 }
 
-body {
-    height: 200vh;
-}
-
 .landing-banner img {
     width: 100%;
     position: absolute;
