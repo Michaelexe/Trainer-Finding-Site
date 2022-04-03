@@ -1,0 +1,59 @@
+.navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: transparent;
+  height: 65px;
+  width: 100%;
+  color: var(--text-color-1);
+  font-family: Montserrat;
+  transition: all 200ms ease-in;
+  z-index: 1;
+}
+
+.navbar__logo {
+  height: 50px;
+  padding: 0px 10px;
+}
+
+.navbar__register-div {
+  gap: 20px;
+  padding: 0px 20px;
+  height: 30px;
+  border-left: 2px solid white;
+}
+
+.navbar__register-div button {
+  background-color: transparent;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  border: none;
+}
+
+.navbar__register-div__register {
+  background-color: var(--color-4) !important;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: black !important;
+}
+
+.navbar__register-div button:hover {
+  font-weight: 600;
+}
+
+.navbar__others-div {
+  gap: 30px;
+  margin-left: auto;
+  padding: 0px 20px;
+}
+
+.navbar__others-div a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.navbar__others-div a:hover {
+  font-weight: 600;
+}

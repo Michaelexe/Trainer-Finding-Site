@@ -1,0 +1,53 @@
+.landing-banner {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 21/11;
+}
+
+body {
+    height: 200vh;
+}
+
+.landing-banner img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.landing-banner__text-div {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(0, -50%);
+    color: white;
+    font-family: Oswald;
+    width: 90ch;
+}
+
+.landing-banner__text-div h1 {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4rem;
+    color: var(--color-4);
+    text-shadow: 1px 1px 8px black;
+}
+
+.landing-banner__text-div h2 {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 8rem;
+    line-height: 8rem;
+    color: var(--color-5);
+    margin-left: -15px;
+    text-shadow: 1px 1px 8px black;
+}
+
+.landing-banner__text-div p {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 2em;
+    width: 100%;
+    margin-top: 10px;
+    text-shadow: 1px 1px 8px black;
+}
