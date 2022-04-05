@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 21/11;
+    user-select: none;
 }
 
 .landing-banner img {

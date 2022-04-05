@@ -6,6 +6,8 @@ import LandingPage from "./portalPages/landingPage";
 import { UserContext } from "./context.js";
 import { axiosUser } from "./axiosInstance";
 import InitialLoadingPage from "./portalPages/initialLoadingPage";
+import MainPage from "./portalPages/mainPage";
+import BusinessLandingPage from "./portalPages/businessLandingPage";
 
 function App() {
   const [userInfo, setUserInfo] = useState({ gotUser: false });
@@ -35,11 +37,15 @@ function App() {
             element={
               initialLoad ? (
                 <InitialLoadingPage />
-              ) : userInfo.gotUser ? null : (
+              ) : userInfo.gotUser ? (
+                <MainPage />
+              ) : (
                 <LandingPage />
               )
             }
           />
+          <Route path="/landing" element={<LandingPage />} />
+          <Route path="/business" element={<BusinessLandingPage />} />
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

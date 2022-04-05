@@ -6,6 +6,7 @@ const passportJWT = require("passport-jwt");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const format = require("pg-format");
+const bcrypt = require("bcrypt");
 
 const db = require("./db");
 
@@ -23,6 +24,34 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIESECRET));
 
 app.use(passport.initialize());
+
+passport.use(
+  "user_account_local",
+  new localStrategy(
+    {
+      usernameField: "userEmail",
+      passwordField: "password",
+      session: false,
+    },
+    async (email, password, done) => {
+      const results = await db.query(
+        format("SELECT * FROM user_account WHERE user_email=%L", email)
+      );
+      const user = results.rows[0];
+      if (user) {
+        bcrypt.compare(password, user.password_hash).then((result) => {
+          if (result) {
+            done(null, user);
+          } else {
+            done(null, false);
+          }
+        });
+      } else {
+        return done(null, false);
+      }
+    }
+  )
+);
 
 const userCookieExtractor = (req) => {
   let token = null;

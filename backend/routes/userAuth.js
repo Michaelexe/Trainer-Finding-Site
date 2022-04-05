@@ -83,4 +83,53 @@ router.post(
   })
 );
 
+const checkSchema = catchAsync(async (req, res, next) => {
+  const loginData = req.body;
+  const formData = {
+    user_email: loginData.userEmail,
+    password: loginData.password,
+  };
+  await userLoginSchema.validateAsync(formData);
+  console.log("schema checked");
+  next();
+});
+
+router.post(
+  "/login",
+  checkSchema,
+  catchAsync(async (req, res, next) => {
+    passport.authenticate(
+      "user_account_local",
+      { session: false },
+      (err, user) => {
+        if (err) {
+          return next(err);
+        }
+        if (!user) {
+          res.json({
+            status: "failed",
+            message: "Wrong email or password",
+          });
+        }
+        req.login(user, () => {
+          jwt.sign(
+            { user_uid: user.user_uid },
+            config.jwt.secret,
+            config.jwt.options,
+            (err, token) => {
+              if (err) throw err;
+              res.cookie("user_jwt", token, config.jwt.cookie);
+              console.log("SUCCESS");
+              res.status(200).json({
+                status: "success",
+                jwt: token,
+              });
+            }
+          );
+        });
+      }
+    )(req, res, next);
+  })
+);
+
 module.exports = router;

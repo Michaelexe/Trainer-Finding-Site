@@ -1,14 +1,13 @@
-.register {
+.login {
     position: relative;
     width: 100%;
     max-width: 850px;
     height: 500px;
     background-color: white;
-    box-shadow: 0px 0px 60px black;
-    justify-content: right;
+    box-shadow: 0px 0px 60px #444444;
 }
 
-.register__header {
+.login__header {
     position: absolute;
     top: 10px;
     font-family: Montserrat;
@@ -16,27 +15,27 @@
     color: #444444;
 }
 
-.register__image {
+.login__form-container {
     height: 100%;
-}
-
-.register__image img {
-    height: 100%;
-
-}
-
-.register__form-container {
-    position: relative;
     width: calc(100% - 374.94px);
+}
+
+.login__form-container form {
+    position: relative;
+    height: 100%;
+    gap: 40px;
+    width: 100%;
+}
+
+.login__image {
     height: 100%;
 }
 
-.register__form-container form {
-    width: 100%;
-    gap: 30px;
+.login__image img {
+    height: 100%;
 }
 
-.register__submit {
+.login__submit {
     position: absolute;
     bottom: 20px;
     height: 45px;

@@ -8,7 +8,7 @@ import "./styles.css";
 function LandingPage() {
   return (
     <>
-      <Navbar />
+      <Navbar transparency={true} hide={true} />
       <div className="landing-banner">
         <img src={landingBanner} alt="" />
         <div className="landing-banner__text-div flex flex--column">

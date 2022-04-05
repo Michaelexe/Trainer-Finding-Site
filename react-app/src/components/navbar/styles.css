@@ -2,13 +2,14 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  background-color: transparent;
+  background-color: var(--color-1);
   height: 65px;
   width: 100%;
   color: var(--text-color-1);
   font-family: Montserrat;
   transition: all 200ms ease-in;
   z-index: 1;
+  user-select: none;
 }
 
 .navbar__logo {
@@ -16,14 +17,14 @@
   padding: 0px 10px;
 }
 
-.navbar__register-div {
+.navbar__auth-div {
   gap: 20px;
   padding: 0px 20px;
   height: 30px;
   border-left: 2px solid white;
 }
 
-.navbar__register-div button {
+.navbar__auth-div button {
   background-color: transparent;
   color: white;
   font-weight: 500;
@@ -31,14 +32,14 @@
   border: none;
 }
 
-.navbar__register-div__register {
+.navbar__auth-div__register {
   background-color: var(--color-4) !important;
   padding: 5px 10px;
   border-radius: 5px;
   color: black !important;
 }
 
-.navbar__register-div button:hover {
+.navbar__auth-div button:hover {
   font-weight: 600;
 }
 
@@ -48,12 +49,23 @@
   padding: 0px 20px;
 }
 
-.navbar__others-div a {
+.navbar__others-div a, .navbar__others-div span {
   text-decoration: none;
   color: white;
   font-size: 18px;
+  cursor: pointer;
 }
 
-.navbar__others-div a:hover {
+.navbar__others-div a:hover, .navbar__others-div span:hover {
   font-weight: 600;
+}
+
+.navbar__auth-div__user {
+  background-color: var(--color-4);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: black;
+  font-weight: 900;
+  font-size: 20px;
 }
