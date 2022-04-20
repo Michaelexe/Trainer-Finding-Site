@@ -62,6 +62,9 @@ function Navbar() {
             <a href="#benefits">Benefits</a>
           </li>
           <li>
+            <a href="#pricing">Pricing</a>
+          </li>
+          <li>
             <a href="#qanda">Q&A</a>
           </li>
         </ol>

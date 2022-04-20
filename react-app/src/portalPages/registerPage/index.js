@@ -28,6 +28,7 @@ function RegisterPage({ setPopup }) {
         console.log(err);
       });
   };
+
   return (
     <div className="overlay flex flex--justify-center flex--align-center">
       <div className="register flex">

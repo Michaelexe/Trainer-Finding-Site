@@ -31,6 +31,34 @@ function BusinessLandingPage() {
           </div>
         </div>
       </div>
+      <div
+        className="business-landing-benefits-section flex flex--column flex--align-center flex--justify-center"
+        id="benefits"
+      >
+        <h1>Benefits</h1>
+        <div className="business-landing-benefits-div">
+          <div className="business-landing-benefits-div__card flex flex--column flex--align-center flex--justify-center">
+            <h2>No Commisions</h2>
+            <p>We won't loot you from all your earnings</p>
+          </div>
+          <div className="business-landing-benefits-div__card flex flex--column flex--align-center flex--justify-center">
+            <h2>More Clients</h2>
+            <p>All potential clients on the site can look at your profile.</p>
+          </div>
+          <div className="business-landing-benefits-div__card flex flex--column flex--align-center flex--justify-center">
+            <h2>Straight Forward</h2>
+            <p>All you need are pictures and a good bio to get started.</p>
+          </div>
+        </div>
+      </div>
+      <div className="business-pricing-section flex flex--column">
+        <h1 className="business-pricing-section__header">Plans And Pricing</h1>
+        <div className="flex">
+          <div className="business-pricing-card">
+            
+          </div>
+        </div>
+      </div>
     </>
   );
 }
